@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.swrevo.logcatviewer">
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <application
+        android:fullBackupContent="@xml/backup_descriptor"
+        tools:ignore="AllowBackup">
+        <activity android:name="com.swrevo.logcatviewer.LogcatActivity"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
+            android:label=""
+            />
+        <activity android:name="com.swrevo.logcatviewer.LogcatDetailActivity"
+            android:label="Log detail"
+            android:theme="@style/Theme.MaterialComponents.DayNight"
+            >
+            <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.swrevo.logcatviewer.LogcatActivity"/>
+        </activity>
+
+        <service android:name="com.swrevo.logcatviewer.FloatingLogcatService"/>
+    </application>
+
+</manifest>
